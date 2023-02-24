@@ -1,22 +1,26 @@
 <template>
   <li>
-    <h2>{{ friend.name }}</h2>
+    <h2>{{ name }}</h2>
     <button @click="toggleDetails">Show Details</button>
     <ul v-if="detailsAreVisible">
       <li>
         <strong>Phone:</strong>
-        {{ friend.phone }}
+        {{ PhoneNumber }}
       </li>
       <li>
         <strong>Email:</strong>
-        {{ friend.email }}
+        {{ emailAddress }}
       </li>
+    </ul>
+    <ul v-else>
+      <p>Click on Show details see each friend info</p>
     </ul>
   </li>
 </template>
 
 <script>
 export default {
+  props:['name','PhoneNumber','emailAddress'],
   data() {
     return {
       detailsAreVisible: false,
