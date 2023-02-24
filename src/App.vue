@@ -4,8 +4,7 @@
       <h1>My Friends</h1>
     </header>
     <ul>
-      <friend-contact name="Amir Ali Anwar" Phone-number="03004582386" email-address="amiralianwar@gmail.com"></friend-contact>
-      <friend-contact name="waqas" Phone-number="03004582386" email-address="waqas@gmail.com"></friend-contact>
+      <friend-contact v-for="(friend, index) in friends" :key="index" :name="friend.name" :Phone-number="friend.phone" :email-address="friend.email"></friend-contact>
     </ul>
   </section>
 </template>
@@ -24,6 +23,12 @@ export default {
         {
           id: "julie",
           name: "Julie Jones",
+          phone: "0987 654421 21",
+          email: "julie@localhost.com",
+        },
+        {
+          id: "Mubasher",
+          name: "Mubasher",
           phone: "0987 654421 21",
           email: "julie@localhost.com",
         },
